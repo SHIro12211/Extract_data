@@ -1,0 +1,5 @@
+python -m pip freeze > requirements.txt   -------------------------- para crear el txt
+python -m pip install -r requirements.txt  ------------------------- para instalarlas librerías
+pip uninstall -r requirements.txt   	   -------------------------- eliminar todas las librerías(incluir "-y" al final para dar automáticamente "si" todas las preguntas que formulen)
+
+python -m venv .env\		           -------------------------- para crear un entorno virtual
