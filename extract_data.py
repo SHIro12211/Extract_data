@@ -41,8 +41,7 @@ for table in soup.find_all("table"):#buscar la tabla correcta
             date=col[0].text
             revenue=col[1].text
             tesla_revenue=pd.concat([tesla_revenue, pd.DataFrame({'Date':[date], 'Revenue':[revenue]})], ignore_index=True)
-    else:
-        print("else")
+
 print("****************antes************")
 print(tesla_revenue.head())
 #LIMPIEZA DE DATOS
@@ -53,4 +52,4 @@ tesla_revenue["Revenue"]=tesla_revenue["Revenue"].str.replace(',|\$', "", regex=
 tesla_revenue=tesla_revenue[tesla_revenue['Revenue']!=""]
 print("****************despues*********************")
 print(tesla_revenue.head())
-
+make_graph(tesla_data, tesla_revenue, 'Tesla')
